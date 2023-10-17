@@ -1,0 +1,712 @@
+/*KUNALSINH SOLANKI*/
+body{
+    font-family: sans-serif;
+}
+
+a{
+    margin: 0.5rem;
+    padding: 1rem;
+    color: white;
+    background: black;
+    text-decoration: none;
+    border-radius: .25rem;
+}
+
+/* 2D ANIMATION EFFECTS*/
+    /*GROW*/
+.hvr-grow {
+    display: inline-block;
+    transform: perspective(1px) translateZ(0px);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition: 0.3s;
+    vertical-align: middle;
+    transition-property: transform;
+}
+.hvr-grow:hover,
+.hvr-grow::focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
+
+    /*SHRINK*/
+
+.hvr-shrink {
+    display: inline-block;
+    transform: perspective(1px) translateZ(0px);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    vertical-align: middle;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+.hvr-shrink:hover,
+.hvr-shrink:focus,
+.hvr-shrink:active {
+    transform: scale(0.9);
+}
+
+    /*PULSE*/
+
+@keyframes pulse {
+    25%{
+        transform: scale(1.1);
+    }
+    75%{
+        transform: scale(0.9);
+    }
+}
+.hvr-pulse {
+        display: inline-block;
+        transform: perspective(1px) translateZ(0);
+        transition: transform;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    }
+    
+.hvr-pulse:hover,
+.hvr-pulse:focus,
+.hvr-pulse:active {
+        animation-name: pulse;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    /*PULSE GROW*/
+
+@keyframes hvr-pulse-grow{
+    to{
+        transform: scale(1.1);
+    }
+}
+.hvr-pulse-grow{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    transition: transform;
+}
+.hvr-pulse-grow:hover,
+.hvr-pulse-grow:focus,
+.hvr-pulse-grow:active {
+        animation-name: hvr-pulse-grow;
+        animation-duration: 0.3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+}
+
+    /*PULSE SHRINK*/
+    @keyframes hvr-pulse-shrink{
+        to{
+            transform: scale(0.9);
+        }
+    }
+    .hvr-pulse-shrink{
+        display: inline-block;
+        transform: perspective(1px) translateZ(0);
+        transition: transform;
+    }
+    .hvr-pulse-shrink:hover,
+    .hvr-pulse-shrink:focus,
+    .hvr-pulse-shrink:active {
+            animation-name: hvr-pulse-shrink;
+            animation-duration: 0.3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+    }
+    /*PUSH*/
+@keyframes hvr-push{
+    50%{
+            transform: scale(0.8);
+        }
+    100%{
+            transform:scale(1);
+    }
+    }
+.hvr-push{
+        display: inline-block;
+        transform: perspective(1px) translateZ(0);
+        transition: transform;
+    }
+.hvr-push:hover,
+.hvr-push:focus,
+.hvr-push:active {
+            animation-name: hvr-push;
+            animation-duration: 0.3s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+    }
+
+        /*POP*/
+@keyframes hvr-pop{
+    50%{
+            transform: scale(1.2);
+        }
+    }
+.hvr-pop{
+        display: inline-block;
+        transform: perspective(1px) translateZ(0);
+        transition: transform;
+    }
+.hvr-pop:hover,
+.hvr-pop:focus,
+.hvr-pop:active {
+            animation-name: hvr-pop;
+            animation-duration: 0.3s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+    }
+
+    /*BOUNCE IN*/
+.hvr-bounce-in{
+        display: inline-block;
+        transform: perspective(1px) translateZ(0);
+        transition-duration: 0.5s;
+}
+.hvr-bounce-in:hover,
+.hvr-bounce-in:focus,
+.hvr-bounce-in:active {
+    transform: scale(1.2);        
+    animation-timing-function: cubic-bezier(0.47 2.02 0.31 -0.36);
+}
+
+/*BOUNCE OUT*/
+.hvr-bounce-out{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.5s;
+}
+.hvr-bounce-out:hover,
+.hvr-bounce-out:focus,
+.hvr-bounce-out:active {
+transform: scale(0.8);        
+animation-timing-function: cubic-bezier(0.47 2.02 0.31 -0.36);
+}
+
+/*ROTATE*/
+.hvr-rotate{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+.hvr-rotate:hover,
+.hvr-rotate:focus,
+.hvr-rotate:active {
+    transform: rotate(4deg);        
+}
+
+
+/* GROW ROTATE*/
+.hvr-grow-rotate{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+.hvr-grow-rotate:hover,
+.hvr-grow-rotate:focus,
+.hvr-grow-rotate:active {
+    transform: scale(1.1) rotate(4deg);        
+}
+
+/* FLOAT */
+.hvr-float{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+.hvr-float:hover,
+.hvr-float:focus,
+.hvr-float:active {
+    transform: translateY(-8px);        
+}
+
+/* SINK */
+.hvr-sink{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+.hvr-sink:hover,
+.hvr-sink:focus,
+.hvr-sink:active {
+    transform: translateY(8px);        
+}
+
+/*BOB*/
+@keyframes hvr-bob{
+    0%{
+        transform: translateY(-8px);
+    }
+    50%{
+        transform: translateY(-4px);
+    }
+    100%{
+        transform: translateY(-8px);
+    }
+}
+@keyframes hvr-bob-float{
+    100%{
+        transform: translateY(-8px);
+    }
+}
+.hvr-bob{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    vertical-align: middle;
+}
+.hvr-bob:hover,
+.hvr-bob:focus,
+.hvr-bob:active{
+    animation: hvr-bob-float, hvr-bob;
+    animation-duration: 0.3s, 1.5s;
+    animation-delay: 0s, 0.3s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-iteration-count: 1, infinite;
+    animation-direction: normal, alternate;
+    animation-fill-mode: forwards;
+}
+
+    /*HANG*/
+@keyframes hvr-hang{
+    0%{
+        transform: translateY(8px);
+    }
+    50%{
+        transform: translateY(4px);
+    }
+    100%{
+        transform: translateY(8px);
+    }
+}
+
+@keyframes hvr-hang-sink{
+    100%{
+        transform: translateY(8px);
+    }
+}
+
+.hvr-hang{
+        display: inline-block;
+        transform: perspective(1px) translateZ(0);
+        vertical-align: middle;
+    }
+.hvr-hang:hover,
+.hvr-hang:focus,
+.hvr-hang:active{
+        animation: hvr-hang-sink, hvr-hang;
+        animation-duration: 0.3s, 1.5s;
+        animation-delay: 0s, 0.3s;
+        animation-timing-function: ease-out, ease-in-out;
+        animation-iteration-count: 1, infinite;
+        animation-direction: normal, alternate;
+        animation-fill-mode: forwards;
+    }
+
+    /*SKEW*/
+
+.hvr-skew{
+        display: inline-block;
+        transform: perspective(1px) translateZ(0);
+        vertical-align: middle;
+        transition-duration: 0.3s;
+        transition-property: transform;
+}
+.hvr-skew:hover,
+.hvr-skew:focus,
+.hvr-skew:active{
+    transform: skew(-10deg);
+}
+
+    /*SKEW FORWARD*/
+.hvr-skew-forward{
+        display: inline-block;
+        transform: perspective(1px) translateZ(0);
+        vertical-align: middle;
+        transition-duration: 0.3s;
+        transition-property: transform;
+        transform-origin: 0 100%;
+}
+.hvr-skew-forward:hover,
+.hvr-skew-forward:focus,
+.hvr-skew-forward:active{
+    transform: skew(-10deg);
+}
+
+    /*SKEW BACKWARD*/
+.hvr-skew-backward{
+        display: inline-block;
+        transform: perspective(1px) translateZ(0);
+        vertical-align: middle;
+        transition-duration: 0.3s;
+        transition-property: transform;
+        transform-origin:0 100% ;
+}
+.hvr-skew-backward:hover,
+.hvr-skew-backward:focus,
+.hvr-skew-backward:active{
+    transform: skew(10deg);
+}
+
+/*WOBBLE VERTICAL*/
+
+@keyframes hvr-wobble-vertical{
+    16.65%{
+        transform: translateY(8px);
+    }
+    33.3%{
+        transform: translateY(-6px);
+    }
+    49.95%{
+        transform: translateY(4px);
+    }
+    66.6%{
+        transform: translateY(-2px);
+    }
+    83.25%{
+        transform: translateY(1px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.hvr-wobble-vertical{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    vertical-align: middle;
+}
+.hvr-wobble-vertical:hover,
+.hvr-wobble-vertical:focus,
+.hvr-wobble-vertical:active{
+    animation-name: hvr-wobble-vertical;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+/*WOBBLE HORIZONTAL*/
+
+@keyframes hvr-wobble-horizontal{
+    16.65%{
+        transform: translateX(8px);
+    }
+    33.3%{
+        transform: translateX(-6px);
+    }
+    49.95%{
+        transform: translateX(4px);
+    }
+    66.6%{
+        transform: translateX(-2px);
+    }
+    83.25%{
+        transform: translateX(1px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.hvr-wobble-horizontal{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    vertical-align: middle;
+}
+.hvr-wobble-horizontal:hover,
+.hvr-wobble-horizontal:focus,
+.hvr-wobble-horizontal:active{
+    animation-name: hvr-wobble-horizontal;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+/*WOBBLE TO BOTTOM RIGHT*/
+
+@keyframes hvr-wobble-bottom-right{
+    16.65%{
+        transform: translate(8px,8px);
+    }
+    33.3%{
+        transform: translate(-6px,-6px);
+    }
+    49.95%{
+        transform: translate(4px,4px);
+    }
+    66.6%{
+        transform: translate(-2px,-2px);
+    }
+    83.25%{
+        transform: translate(1px,1px);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+.hvr-wobble-bottom-right{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    vertical-align: middle;
+}
+.hvr-wobble-bottom-right:hover,
+.hvr-wobble-bottom-right:focus,
+.hvr-wobble-bottom-right:active{
+    animation-name: hvr-wobble-bottom-right;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+/*WOBBLE TO TOP RIGHT*/
+
+@keyframes hvr-wobble-top-right{
+    16.65%{
+        transform: translate(8px,-8px);
+    }
+    33.3%{
+        transform: translate(-6px,6px);
+    }
+    49.95%{
+        transform: translate(4px,-4px);
+    }
+    66.6%{
+        transform: translate(-2px,2px);
+    }
+    83.25%{
+        transform: translate(1px,-1px);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+.hvr-wobble-top-right{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    vertical-align: middle;
+}
+.hvr-wobble-top-right:hover,
+.hvr-wobble-top-right:focus,
+.hvr-wobble-top-right:active{
+    animation-name: hvr-wobble-top-right;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+/*WOBBLE TO TOP*/
+
+@keyframes hvr-wobble-top{
+    16.65%{
+        transform: skew(-12deg);
+    }
+    33.3%{
+        transform: skew(10deg);
+    }
+    49.95%{
+        transform: skew(-6deg);
+    }
+    66.6%{
+        transform: skew(4deg);
+    }
+    83.25%{
+        transform: skew(-2px);
+    }
+    100%{
+        transform: skew(0);
+    }
+}
+.hvr-wobble-top{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    vertical-align: middle;
+    transform-origin: 0 100%;
+}
+.hvr-wobble-top:hover,
+.hvr-wobble-top:focus,
+.hvr-wobble-top:active{
+    animation-name: hvr-wobble-top;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+/*WOBBLE TO BOTTOM*/
+
+@keyframes hvr-wobble-bottom{
+    16.65%{
+        transform: skew(-12deg);
+    }
+    33.3%{
+        transform: skew(10deg);
+    }
+    49.95%{
+        transform: skew(-6deg);
+    }
+    66.6%{
+        transform: skew(4deg);
+    }
+    83.25%{
+        transform: skew(-2px);
+    }
+    100%{
+        transform: skew(0);
+    }
+}
+.hvr-wobble-bottom{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    vertical-align: middle;
+    transform-origin:100% 0;
+}
+.hvr-wobble-bottom:hover,
+.hvr-wobble-bottom:focus,
+.hvr-wobble-bottom:active{
+    animation-name: hvr-wobble-top;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+/*WOBBLE SKEW*/
+
+@keyframes hvr-wobble-skew{
+    16.65%{
+        transform: skew(-12deg);
+    }
+    33.3%{
+        transform: skew(10deg);
+    }
+    49.95%{
+        transform: skew(-6deg);
+    }
+    66.6%{
+        transform: skew(4deg);
+    }
+    83.25%{
+        transform: skew(-2px);
+    }
+    100%{
+        transform: skew(0);
+    }
+}
+.hvr-wobble-skew{
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    vertical-align: middle;
+}
+.hvr-wobble-skew:hover,
+.hvr-wobble-skew:focus,
+.hvr-wobble-skew:active{
+    animation-name: hvr-wobble-top;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+    /*BUZZ*/
+@keyframes hvr-buzz {
+    50%{
+        transform: translateX(3px) rotate(2deg);
+    }   
+    100%{
+        transform: translateX(-3px) rotate(-2deg);
+    }
+}
+.hvr-buzz{
+        display: inline-block;
+        transform: perspective(1px) translateZ(0);
+        vertical-align: middle;
+}
+.hvr-buzz:hover,
+.hvr-buzz:focus,
+.hvr-buzz:active{
+        animation-name: hvr-buzz;
+        animation-duration: 0.15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;     
+}
+
+    /*BUZZ OUT*/
+    @keyframes hvr-buzz-out {
+        10%{
+            transform: translateX(3px) rotate(2deg);
+        }
+        20%{
+            transform: translateX(-3px) rotate(-2deg);
+        }   
+       
+        30%{
+            transform: translateX(3px) rotate(2deg);
+        }   
+       
+        40%{
+            transform: translateX(-3px) rotate(-2deg);
+        }   
+       
+        50%{
+            transform: translateX(2px) rotate(1deg);
+        }   
+       
+        60%{
+            transform: translateX(-2px) rotate(-1deg);
+        }   
+       
+        70%{
+            transform: translateX(2px) rotate(1deg);
+        }   
+       
+        80%{
+            transform: translateX(-2px) rotate(-1deg);
+        }   
+       
+        90%{
+            transform: translateX(1px) rotate(0deg);
+        }   
+       
+        100%{
+            transform: translateX(-1px) rotate(0deg);
+        }
+    }
+.hvr-buzz{
+            display: inline-block;
+            transform: perspective(1px) translateZ(0);
+            vertical-align: middle;
+    }
+.hvr-buzz-out:hover,
+.hvr-buzz-out:focus,
+.hvr-buzz-out:active{
+            animation-name: hvr-buzz-out;
+            animation-duration: 0.75s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;     
+    }
+
+    /*FORWARD*/
+
+.hvr-forward{
+        display: inline-block;
+        transform: perspective(1px) translateZ(0);
+        vertical-align: middle;
+        transition-property: transform;
+}
+.hvr-forward:hover,
+.hvr-forward:focus,
+.hvr-forward:active{
+      transform: translateX(8px);       
+}
+
+    /*BACKWARD*/
+
+    .hvr-backward{
+        display: inline-block;
+        transform: perspective(1px) translateZ(0);
+        vertical-align: middle;
+        transition-property: transform;
+}
+.hvr-backward:hover,
+.hvr-backward:focus,
+.hvr-backward:active{
+      transform: translateX(-8px);       
+}
